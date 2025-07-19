@@ -4,8 +4,8 @@
 
 **Project Name:** MY Chess Tour 
 **Project Type:** SaaS Platform (B2B2C Model)  
-**Target Market:** Malaysia initially, expanding to ASEAN region  
-**Business Model:** Commission-based (7% on entry fees) + Premium features
+**Target Market:** Malaysia initially, expanding to ASEAN region
+**Business Model:** Commission-based + Premium features
 
 ## Core Mission
 

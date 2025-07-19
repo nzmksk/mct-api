@@ -13,7 +13,7 @@
    - Complete database schema design for core entities
    - Finalize API contract specifications
    - Set up authentication and authorization framework
-   - Plan payment integration architecture with Stripe Connect
+   - Plan payment integration architecture with CHIP Asia (https://www.chip-in.asia)
 
 3. **Sprint 1 Preparation**
    - Break down Phase 1 deliverables into actionable tasks
@@ -35,11 +35,15 @@
 2. **Database:** PostgreSQL as primary database with Redis for caching
 3. **Frontend:** Next.js with React and TypeScript
 4. **Mobile:** React Native (planned for Phase 2)
-5. **Payments:** Stripe Connect with escrow system (platform as payment processor)
+5. **Payments:** CHIP Collect and CHIP Send with escrow system (platform as payment processor)
 6. **Architecture:** Multi-repository approach for independent deployment cycles
 
 ### Business Model Decisions
-1. **Revenue Model:** 7% commission on entry fees (platform as payment processor)
+1. **Revenue Model:**
+   - RM50 and below: RM5 flat fee
+   - RM51-RM60: 10% commission fee
+   - RM61-RM84: 9% commission fee
+   - RM85 and above: 8% commission fee
 2. **Market Focus:** Malaysia first, then ASEAN expansion
 3. **User Acquisition:** Partnership with local chess clubs and federations
 4. **Pricing Strategy:** Commission-based with premium organizer features
@@ -47,18 +51,18 @@
 ### User Experience Decisions
 1. **Mobile-First:** Prioritize mobile experience for Southeast Asian market
 2. **Registration Flow:** Separate flows for players vs organizers
-3. **Payment Security:** Escrow system with 7-day holding period
+3. **Payment Security:** Escrow system
 4. **Tournament Discovery:** Search and filter-heavy interface
 
 ## Next Steps
 
 ### Week 1-2 (Sprint 1)
-- [ ] Set up Go backend project structure with proper module organization
+- [X] Set up Go backend project structure with proper module organization
 - [ ] Implement PostgreSQL connection and migration system
 - [ ] Create user authentication endpoints (register, login, verify email)
 - [ ] Set up Next.js frontend with Tailwind CSS
 - [ ] Build authentication pages and protected route middleware
-- [ ] Establish Docker development environment
+- [X] Establish Docker development environment
 
 ### Week 3-4 (Sprint 2)
 - [ ] Implement user profile management (players vs organizers)
@@ -71,7 +75,7 @@
 ### Week 5-6 (Sprint 3)
 - [ ] Complete tournament creation and management APIs
 - [ ] Build tournament registration system
-- [ ] Implement basic payment integration with Stripe
+- [ ] Implement basic payment integration with CHIP
 - [ ] Add email notification system
 - [ ] Create organizer dashboard for tournament management
 
@@ -85,7 +89,7 @@
 5. **Logging Strategy:** Structured logging with different levels for development vs production
 
 ### Payment Architecture Decisions
-1. **Escrow Period:** 7 days post-tournament before organizer payout
+1. **Escrow Period:** Pending. Need discussion with organizers on how urgent they need the fund.
 2. **Refund Policy:** Automated refunds based on cancellation timing rules
 3. **Malaysian Compliance:** Early consultation with legal team for financial regulations
 4. **Multi-currency Support:** Plan for regional expansion from architecture start
@@ -99,7 +103,7 @@
 ## Important Patterns and Preferences
 
 ### Code Patterns
-1. **Go Project Structure:** Following standard Go project layout with `/cmd`, `/internal`, `/pkg`
+1. **Go Project Structure:** Following standard Go project layout with `/cmd`, `/`, `/pkg`
 2. **API Design:** RESTful APIs with consistent naming conventions
 3. **Error Handling:** Centralized error handling with proper HTTP status codes
 4. **Database Queries:** Using prepared statements and proper connection pooling
@@ -130,7 +134,7 @@
 ### Technical Insights
 1. **Go Performance:** Excellent choice for concurrent tournament registration handling
 2. **PostgreSQL Benefits:** JSON columns useful for flexible tournament configuration storage
-3. **Stripe Connect:** Well-suited for marketplace model with Malaysian support
+3. **CHIP Collect & CHIP Send:** Well-suited for marketplace model with Malaysian support
 4. **Next.js Advantages:** Server-side rendering beneficial for SEO and tournament discovery
 
 ### Business Insights

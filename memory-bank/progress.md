@@ -6,12 +6,16 @@
 **Start Date:** July 2025  
 **Current Phase:** Architecture and Planning  
 **Next Phase:** Phase 1 Development (Months 1-3)  
-**Overall Progress:** 0% Development Complete, 100% Planning Complete
+**Overall Progress:** 5% Development Complete, 100% Planning Complete
 
 ### What's Been Accomplished
 
 #### ✅ Strategic Planning Complete
-- **Business Model Defined:** SaaS platform with 7% commission revenue model
+- **Business Model Defined:** SaaS platform with pricing tier revenue model
+  - RM50 and below: RM5 flat fee
+  - RM51-RM60: 10% commission fee
+  - RM61-RM84: 9% commission fee
+  - RM85 and above: 8% commission fee
 - **Target Market Identified:** Malaysia first, ASEAN expansion in Phase 3
 - **Value Proposition Clarified:** Connect organizers with players through trusted platform
 - **Competitive Analysis:** Differentiation through chess-specific features
@@ -25,10 +29,18 @@
 - **Security Framework Established:** JWT authentication, RBAC, PCI compliance plan
 
 #### ✅ Project Structure Defined
-- **Repository Strategy:** 4-repo approach (API, Web, Mobile, Infrastructure)
+- **Repository Strategy:** Single-repo approach (API development started)
 - **Development Workflow:** Feature branches, PR reviews, automated testing
 - **Deployment Strategy:** AWS ECS, separate staging/production environments
 - **Team Structure:** 3-5 developers for Phase 1, scaling to 8+ for Phase 3
+
+#### ✅ Initial Development Complete
+- **Go Backend Foundation:** Project structure, dependencies, and basic API setup
+- **Database Integration:** PostgreSQL and Redis connection configuration
+- **Middleware Stack:** Logging, CORS, recovery, and error handling
+- **Development Environment:** Docker Compose setup for local development
+- **Health Check Endpoint:** Basic API endpoint for monitoring
+- **Environment Configuration:** Complete .env setup with all required variables
 
 #### ✅ Detailed Project Roadmap
 - **Phase 1 (Months 1-3):** Foundation with 48 specific deliverables
@@ -40,31 +52,35 @@
 
 ### ✅ Market Validation
 - **Chess Community Interest:** Strong demand for digital tournament management
-- **Payment Processing:** Stripe Connect supports Malaysian market requirements
+- **Payment Processing:** CHIP Collect supports Malaysian market requirements
 - **Technology Stack:** Go + PostgreSQL proven for high-concurrency applications
 - **Competition Analysis:** Clear differentiation opportunities identified
 
 ### ✅ Technical Feasibility
 - **Go Performance:** Excellent for handling concurrent tournament registrations
 - **Database Design:** PostgreSQL JSON columns provide flexibility for tournament configs
-- **Payment Integration:** Stripe Connect marketplace model fits business requirements
+- **Payment Integration:** CHIP Collect and CHIP Send fits business requirements
 - **Mobile Strategy:** React Native enables code sharing with web platform
 
 ### ✅ Business Model Validation
-- **Commission Structure:** 7% rate competitive with similar platforms
+- **Commission Structure:**
+  - RM50 and below: RM5 flat fee
+  - RM51-RM60: 10% commission fee
+  - RM61-RM84: 9% commission fee
+  - RM85 and above: 8% commission fee
 - **Escrow System:** Builds trust while generating revenue
 - **Network Effects:** Platform value increases with user base growth
 - **Expansion Strategy:** ASEAN markets show similar characteristics to Malaysia
 
 ## What's Left to Build
 
-### Phase 1: Foundation (Months 1-3) - 0% Complete
+### Phase 1: Foundation (Months 1-3) - 15% Complete
 
 #### Sprint 1: Core Infrastructure (Weeks 1-2)
-- [ ] **Backend Setup:** Go project structure, database connections, basic API framework
+- [x] **Backend Setup:** Go project structure, database connections, basic API framework
 - [ ] **Authentication System:** User registration, login, email verification, JWT tokens
 - [ ] **Frontend Foundation:** Next.js setup, authentication pages, protected routes
-- [ ] **Development Environment:** Docker setup, CI/CD pipeline, testing framework
+- [x] **Development Environment:** Docker setup, CI/CD pipeline, testing framework
 
 #### Sprint 2: User Management (Weeks 3-4)
 - [ ] **User Profiles:** Player and organizer profile creation and management
@@ -85,7 +101,7 @@
 - [ ] **Organizer Tools:** Participant management interface for organizers
 
 #### Sprint 5: Payment Integration (Weeks 9-10)
-- [ ] **Stripe Connect Setup:** Organizer onboarding and verification
+- [ ] **CHIP Collect and CHIP Send Setup:** Organizer onboarding and verification
 - [ ] **Payment Processing:** Secure entry fee collection with Malaysian payment methods
 - [ ] **Escrow System:** Payment holding and automated organizer payouts
 - [ ] **Refund Processing:** Automated refunds based on cancellation policies
@@ -144,7 +160,7 @@
 
 ### Performance Concerns
 - **Database Scaling:** Need to plan for read replicas as tournament volume grows
-- **Image Upload:** File storage strategy needs optimization for profile pictures and tournament logos
+- **Image Upload:** File storage strategy needs optimization for profile pictures and tournament posters
 - **Search Performance:** Tournament search may need Elasticsearch for advanced filtering
 - **Real-time Updates:** WebSocket implementation required for live tournament features
 
@@ -184,7 +200,7 @@
 
 ### Risks Mitigated During Planning
 - **Technology Risk:** Go ecosystem mature enough for chess tournament requirements
-- **Payment Risk:** Stripe Connect provides Malaysian regulatory compliance
+- **Payment Risk:** CHIP Collect and CHIP Send provides Malaysian regulatory compliance
 - **Market Risk:** Clear differentiation from generic event management platforms
 - **Team Risk:** Multi-repo approach enables independent team development
 
